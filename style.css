@@ -1,0 +1,65 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 5rem 1fr 5rem;
+  grid-template-columns: 10% 1fr 30%;
+  grid-template-areas:
+    "h h h"
+    "n c a"
+    "f f f";
+  row-gap: 1rem;
+  column-gap: 1rem;
+  min-height: 100vh;
+  color: white;
+  font-size: 1.5rem;
+  /* overflow: hidden; */
+}
+
+header,
+nav,
+footer,
+aside,
+main {
+  background-color: purple;
+  padding: 10px;
+}
+
+.header {
+  grid-area: h;
+}
+
+.nav {
+  grid-area: n;
+}
+
+.content {
+  grid-area: c;
+}
+
+.ads {
+  grid-area: a;
+}
+
+.footer {
+  grid-area: f;
+}
+
+@media (max-width: 600px) {
+  body {
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "h"
+      "n"
+      "c"
+      "a"
+      "f";
+  }
+}
